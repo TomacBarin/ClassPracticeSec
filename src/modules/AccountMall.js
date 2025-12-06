@@ -18,6 +18,13 @@ export class Account {
         }
     }
 
+    withdraw(amount) {
+        if (amount > 0 && this.#saldo - amount >= 0) {
+            this.#saldo -= amount;
+            console.log(`${this.owner} har tagit ut ${amount} på kontot.`)
+        }
+    }
+
     info() {
         console.log(`${this.owner} har ${this.balance} på kontot.`)
     }
