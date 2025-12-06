@@ -1,6 +1,10 @@
 export class Account {
-    constructor(owner, balance) {
+    constructor(owner, balance = 0) {
         this.owner = owner;
-        this.balance = balance;
+        this.startBalance = balance
+    }
+
+    info() {
+        console.log(`${this.owner} har ${this.startBalance} på kontot.`)
     }
 }
