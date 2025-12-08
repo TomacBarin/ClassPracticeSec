@@ -1,9 +1,9 @@
 export class Account {
-    #saldo = 0
+
+    #saldo = 0;
 
     constructor(owner, balance = 0) {
         this.owner = owner;
-        // this.startBalance = balance;
         this.deposit(balance);
     }
 
@@ -14,11 +14,17 @@ export class Account {
     deposit(amount) {
         if (amount > 0) {
             this.#saldo += amount;
-            console.log(`${this.owner} har satt in ${amount} på kontot.`)
+        }
+    }
+
+    withdraw() {
+        if (amount > 0 && this.#saldo - amount >= 0) {
+            this.#saldo -= amount;
         }
     }
 
     info() {
-        console.log(`${this.owner} har ${this.balance} på kontot.`)
+        console.log(`${this.owner} har ${this.balance} kronor på kontot.`)
     }
+
 }
