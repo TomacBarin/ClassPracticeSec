@@ -1,3 +1,5 @@
+// Account.js
+
 export class Account {
 
     #saldo = 0;
@@ -17,7 +19,7 @@ export class Account {
         }
     }
 
-    withdraw() {
+    withdraw(amount) {
         if (amount > 0 && this.#saldo - amount >= 0) {
             this.#saldo -= amount;
         }
